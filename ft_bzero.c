@@ -26,9 +26,9 @@ void	ft_bzero(void *s, size_t n)
 	s = x;
 }
 
-#include <stdio.h>
-int	main(void)
-{
-	char s[200] = ";ja;fkjzbvlbiawe";
-	ft_bzero(s + 5, 5*sizeof(char));
-}
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	char s[200] = ";ja;fkjzbvlbiawe";
+// 	ft_bzero(s + 5, 5*sizeof(char));
+// }

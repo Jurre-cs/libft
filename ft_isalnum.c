@@ -20,10 +20,10 @@ int	ft_isalnum(int c)
 		return (0);
 }
 
-#include <stdio.h>
-int main(void)
-{
-	if (!ft_isalnum)
-	// printf("%d\n", ft_isalnum());
-	printf("%d", isalnum(1));
-}
+// #include <stdio.h>
+// int main(void)
+// {
+// 	if (!ft_isalnum)
+// 	// printf("%d\n", ft_isalnum());
+// 	printf("%d", isalnum(1));
+// }
