@@ -6,17 +6,17 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/09 15:59:54 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/09 16:27:04 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/16 14:49:13 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-	unsigned char *s;
-	unsigned char *c;
+	size_t			i;
+	unsigned char	*s;
+	unsigned char	*c;
 
 	s = (unsigned char *)s1;
 	c = (unsigned char *)s2;

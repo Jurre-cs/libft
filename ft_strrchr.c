@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/08 14:45:53 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/08 16:57:33 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/17 16:07:40 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char *ft_strrchr(const char *s, int c)
 {
 	int i;
 
-	if (!s)
-		return(NULL);
 	i = ft_strlen(s);
 	while (s[i] != c)
 	{
@@ -31,8 +29,8 @@ char *ft_strrchr(const char *s, int c)
 
 #include <stdio.h>
 
-int	main(void)
-{
-	char s[] = "";
-	printf("%s", ft_strrchr(s, 'w'));
-}
+// int	main(void)
+// {
+// 	char s[] = "";
+// 	printf("%s", ft_strrchr(s, 'w'));
+// }

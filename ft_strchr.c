@@ -6,23 +6,38 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/08 12:33:36 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/09 16:27:10 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/17 16:09:02 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while ((s[i] != '\0' && s[i] != c) && s)
+	while (s[i] != c && s[i] != '\0')
 		i++;
-	if (s[i] == '\0' || !s)
-		return(NULL);
 	return ((char *)s + i);
 }
+
+// char *ft_strrchr(const char *s, int c)
+// {
+// 	int i;
+
+// 	if (!s)
+// 		return(NULL);
+// 	i = ft_strlen(s);
+// 	while (s[i] != c)
+// 	{
+// 		if (i == 0)
+// 			return(NULL);
+// 		i--;
+// 	}
+// 	return ((char *)s + i);
+// }
+
 
 // #include <stdio.h>
 

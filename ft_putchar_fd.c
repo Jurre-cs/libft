@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_putchar_fd.c                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/10/09 14:39:04 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/16 14:48:43 by jstomps       ########   odam.nl         */
+/*   Created: 2025/10/17 17:22:52 by jstomps       #+#    #+#                 */
+/*   Updated: 2025/10/17 18:19:17 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			i;
-	unsigned char	*d;
-
-	d = (unsigned char *)s;
-	i = 0;
-	if (n == 0 || !s)
-		return (NULL);
-	while (d[i] != '\0' && d[i] != c && i < n)
-		i++;
-	if (d[i] == '\0')
-		return (NULL);
-	return (d + i);
+	write(fd, &c, 1);
 }
-
-// #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char s[] = "idkhwttotype";
-// 	printf("%s", ft_memchr(s, 'w', 5));
+// 	ft_putchar_fd('k', 1);
 // }

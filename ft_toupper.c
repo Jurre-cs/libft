@@ -6,11 +6,11 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/08 12:14:07 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/08 16:55:00 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/16 14:59:14 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		c -= 32;

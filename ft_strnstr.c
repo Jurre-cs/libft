@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/09 17:22:00 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/09 18:53:52 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/14 18:29:26 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	int i;
+	size_t i;
 	int j;
 	
 	i = 0;
@@ -41,10 +41,10 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 #include <stdio.h>
 
-int	main(void)
-{
-	char big[40] = "asdfdsafsadfsadfsadfsadfsadfsafasdff";
-	char little[40] = "asfdsaf";
-	int len = 2;
-	printf("%s", ft_strnstr(big, little, len));
-}
+// int	main(void)
+// {
+// 	char big[40] = "asdfdsafsadfsadfsadfsadfsadfsafasdff";
+// 	char little[40] = "asfdsaf";
+// 	int len = 2;
+// 	printf("%s", ft_strnstr(big, little, len));
+// }

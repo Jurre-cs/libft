@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/07 17:49:22 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/09 14:25:01 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/16 18:55:08 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,38 +15,39 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned int i;
-	unsigned int j;
+	size_t	i;
+	size_t	j;
+	size_t	k;
 
 	i = 0;
 	j = 0;
-	size = size - 1;
-	if (size == 0)
-		return(ft_strlen(src));
-	while (dst && dst[i] != '\0')
+	k = 0;
+	while (dst[i] != '\0' && i < size)
 		i++;
-	while(size > 0)
-	{
-		dst[i + j] = src[j];
+	while (src[j] != '\0')
 		j++;
-		size--;
+	if (size == 0 || size <= i)
+		return (j + size);
+	while (src[k] != '\0' && (i + k) < (size - 1))
+	{
+		dst[i + k] = src[k];
+		k++;
 	}
-	i = i + j;
-	dst[i] = '\0';
-	return(i);
+	dst[i + k] = '\0';
+	return (i + j);
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main(void)
-{
-	int a;
-	int b;
-	int i = 1;
-	char c[40] = "asd";
-	char s[40] = "kjasdlkjvbalkjblkds";
-	a = ft_strlcat(s, c, i);
-	printf("%s : %d\n",s , a);
-	// b = strlcat(s, c, i);
-	// printf("%s : %d\n", s, b);
-}
+// int main(void)
+// {
+// 	int a;
+// 	int b;
+// 	int i = 0;
+// 	char s[40] = "12345";
+// 	char d[40] = "123";
+// 	a = ft_strlcat(d, s, i);
+// 	printf("%s : %d\n",s , a);
+// 	b = strlcat(d, s, i);
+// 	printf("%s : %d\n", s, b);
+// }

@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memchr.c                                        :+:    :+:            */
+/*   ft_putnbr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/10/09 14:39:04 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/16 14:48:43 by jstomps       ########   odam.nl         */
+/*   Created: 2025/10/17 18:19:38 by jstomps       #+#    #+#                 */
+/*   Updated: 2025/10/17 19:01:20 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t			i;
-	unsigned char	*d;
+	char	c;
 
-	d = (unsigned char *)s;
-	i = 0;
-	if (n == 0 || !s)
-		return (NULL);
-	while (d[i] != '\0' && d[i] != c && i < n)
-		i++;
-	if (d[i] == '\0')
-		return (NULL);
-	return (d + i);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return;
+	}
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	if (n / 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	c = n % 10 + '0';
+	write(fd, &c, 1);
 }
-
-// #include <stdio.h>
 
 // int	main(void)
 // {
-// 	char s[] = "idkhwttotype";
-// 	printf("%s", ft_memchr(s, 'w', 5));
+// 	ft_putnbr_fd(-2147483648, 1);
 // }
