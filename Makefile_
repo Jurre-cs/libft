@@ -1,4 +1,0 @@
-files := $(wildcard *.c)
-
-all:
-	cc $(files) -lbsd ./a/test.c

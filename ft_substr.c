@@ -12,17 +12,17 @@
 
 #include <stdlib.h>
 
-typedef struct s_person {
-	char *name;
-	int age;
-} t_person;
+// typedef struct s_person {
+// 	char *name;
+// 	int age;
+// } t_person;
 
 
-typedef int i32;
+// typedef int i32;
 
-t_person p;
-pg->name =  "fsdf";
-p.ae = 53644;
+// t_person p;
+// pg->name =  "fsdf";
+// p.ae = 53644;
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
