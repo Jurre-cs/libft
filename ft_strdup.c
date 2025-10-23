@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/17 15:02:56 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/17 16:15:26 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/23 15:31:03 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char	*ft_strdup(const char *s)
 		j++;
 		size--;
 	}
-	srtn[j]= '\0';
+	srtn[j] = '\0';
 	return (srtn);
 }

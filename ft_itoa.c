@@ -1,45 +1,62 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_itoa.c                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/10/06 14:04:05 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/21 13:12:46 by jstomps       ########   odam.nl         */
+/*   Created: 2025/10/21 15:39:29 by jstomps       #+#    #+#                 */
+/*   Updated: 2025/10/23 15:47:51 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_atoi(const char *nptr)
+int	ft_intlen(int n1)
 {
 	int	i;
-	int	out;
 
-	i = 1;
-	out = 0;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
+	i = 0;
+	if (n1 < 0)
+		i++;
+	while (n1 / 10 != 0)
 	{
-		if (*nptr == '-')
-			i *= -1;
-		nptr++;
+		n1 /= 10;
+		i++;
 	}
-	while (*nptr >= 48 && *nptr <= 57)
+	return (i);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*s;
+	int		n1;
+	int		i;
+
+	n1 = n;
+	i = ft_intlen(n);
+	s = malloc((i + 2) * sizeof(char));
+	if (!s)
+		return (NULL);
+	s[i + 2] = '\0';
+	while (i >= 0)
 	{
-		out *= 10;
-		out += (*nptr - 48);
-		nptr++;
+		if (n1 / 10)
+			n1 %= 10;
+		else
+		{
+			s[i] = n1 + '0';
+			i--;
+			n1 = n / 10;
+			n /= 10;
+		}
 	}
-	return (out * i);
+	return (s);
 }
 
 // #include <stdio.h>
 
 // int main(void)
 // {
-// 	char *s = "123987459";
-// 	printf("%d", atoi(s));
+// 	printf("%s", ft_itoa(93405791));
 // }

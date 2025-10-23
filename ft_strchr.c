@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/08 12:33:36 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/17 16:09:02 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/23 15:31:09 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ char	*ft_strchr(const char *s, int c)
 // 	}
 // 	return ((char *)s + i);
 // }
-
 
 // #include <stdio.h>
 

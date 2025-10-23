@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_atoi.c                                          :+:    :+:            */
+/*   ft_lstnew.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/10/06 14:04:05 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/21 13:12:46 by jstomps       ########   odam.nl         */
+/*   Created: 2025/10/23 19:32:35 by jstomps       #+#    #+#                 */
+/*   Updated: 2025/10/23 20:49:10 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
-int	ft_atoi(const char *nptr)
+t_list	*ft_lstnew(void *content)
 {
-	int	i;
-	int	out;
+	t_list	*node;
 
-	i = 1;
-	out = 0;
-	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
-		nptr++;
-	if (*nptr == '-' || *nptr == '+')
-	{
-		if (*nptr == '-')
-			i *= -1;
-		nptr++;
-	}
-	while (*nptr >= 48 && *nptr <= 57)
-	{
-		out *= 10;
-		out += (*nptr - 48);
-		nptr++;
-	}
-	return (out * i);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
 
-// #include <stdio.h>
-
-// int main(void)
+// int main(int argc, char const *argv[])
 // {
-// 	char *s = "123987459";
-// 	printf("%d", atoi(s));
+// 	t_list *node1;
+// 	t_list *node2;
+// 	t_list *node3;
+// 	node1 ->content = ;
+// 	node2;
+// 	node3;
+// 	node1 ->next = node2;
+// 	node2 ->next = node3;
+
+// 	return (0);
 // }

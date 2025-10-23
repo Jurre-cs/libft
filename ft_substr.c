@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/13 16:31:37 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/17 17:55:46 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/23 15:32:20 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 // 	int age;
 // } t_person;
 
-
 // typedef int i32;
 
 // t_person p;
@@ -27,10 +26,10 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subs;
-	size_t		i;
+	size_t	i;
 
 	i = 0;
-	subs = malloc((len + 1)* sizeof(char));
+	subs = malloc((len + 1) * sizeof(char));
 	if (!subs)
 		return (NULL);
 	while ((s[start] != '\0' && s) && i < len)

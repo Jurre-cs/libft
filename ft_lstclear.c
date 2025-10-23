@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putnbr_fd.c                                     :+:    :+:            */
+/*   ft_lstclear.c                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/10/17 18:19:38 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/23 15:31:20 by jstomps       ########   odam.nl         */
+/*   Created: 2025/10/23 22:42:03 by jstomps       #+#    #+#                 */
+/*   Updated: 2025/10/23 22:57:34 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	char	c;
+	t_list *tmp;
 
-	if (n == -2147483648)
-	{
-		write(fd, "-2147483648", 11);
+	if (lst == NULL || *lst == NULL || !del)
 		return ;
-	}
-	if (n < 0)
+	while (*lst != NULL)
 	{
-		write(fd, "-", 1);
-		n *= -1;
+		tmp = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = tmp;
 	}
-	if (n / 10)
-	{
-		ft_putnbr_fd(n / 10, fd);
-	}
-	c = n % 10 + '0';
-	write(fd, &c, 1);
 }
-
-// int	main(void)
-// {
-// 	ft_putnbr_fd(-2147483648, 1);
-// }

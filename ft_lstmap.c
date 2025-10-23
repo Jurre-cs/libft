@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strrchr.c                                       :+:    :+:            */
+/*   ft_lstmap.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2025/10/08 14:45:53 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/23 15:41:05 by jstomps       ########   odam.nl         */
+/*   Created: 2025/10/23 23:24:54 by jstomps       #+#    #+#                 */
+/*   Updated: 2025/10/23 23:38:35 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-char	*ft_strrchr(const char *s, int c)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
+	t_list	*lst1;
+	t_list	*new;
 
-	i = ft_strlen(s);
-	while (s[i] != c)
+	if (!f || !del)
+		return (NULL);
+	lst1 = NULL;
+	while (lst)
 	{
-		if (i == 0)
+		if (!(new = ft_lstnew((*f)(lst->content))))
+		{
+			while (lst1)
+			{
+				new = lst1->next;
+				(*del)(lst1->content);
+				free(lst1);
+				lst1 = new;
+			}
+			lst = NULL;
 			return (NULL);
-		i--;
+		}
+		ft_lstadd_back(&lst1, new);
+		lst = lst->next;
 	}
-	return ((char *)s + i);
+	return (lst1);
 }
-
-#include <stdio.h>
-
-// int	main(void)
-// {
-// 	char s[] = "";
-// 	printf("%s", ft_strrchr(s, 'w'));
-// }

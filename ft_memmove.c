@@ -6,19 +6,19 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/07 14:58:10 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/17 15:47:00 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/23 15:31:40 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <bsd/string.h>
 #include <stdio.h>
-#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	const unsigned char	*csrc;
 	unsigned char		*cdest;
-	size_t i;
+	size_t				i;
 
 	csrc = ((const unsigned char *)src);
 	cdest = ((unsigned char *)dest);
