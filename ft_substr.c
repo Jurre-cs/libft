@@ -6,11 +6,11 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/13 16:31:37 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/23 15:32:20 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/30 17:39:42 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 // typedef struct s_person {
 // 	char *name;
@@ -29,16 +29,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
-	subs = malloc((len + 1) * sizeof(char));
+	while (s && s[i] != '\0')
+		i++;
+	if (len > i + start)
+		len = i + start;
+	if (start > i)
+		return (ft_strdup(""));
+	if (start + len > ft_strlen(s))
+		(len = ft_strlen(s) - start);
+	subs = ft_calloc(len + 1, sizeof(char));
 	if (!subs)
 		return (NULL);
-	while ((s[start] != '\0' && s) && i < len)
+	i = 0;
+	while (i < len)
 	{
 		subs[i] = s[start];
 		start++;
 		i++;
 	}
-	subs[i] = '\0';
 	return (subs);
 }
 

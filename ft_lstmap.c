@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/23 23:24:54 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/23 23:38:35 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/30 18:35:20 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	lst1 = NULL;
 	while (lst)
 	{
-		if (!(new = ft_lstnew((*f)(lst->content))))
+		new = ft_lstnew((*f)(lst->content));
+		if (!new)
 		{
-			while (lst1)
-			{
-				new = lst1->next;
-				(*del)(lst1->content);
-				free(lst1);
-				lst1 = new;
-			}
-			lst = NULL;
-			return (NULL);
+			ft_lstclear(&lst1, del);
 		}
 		ft_lstadd_back(&lst1, new);
 		lst = lst->next;

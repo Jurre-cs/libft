@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/06 14:04:05 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/21 13:12:46 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/30 18:01:04 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (out * i);
 }
-
-// #include <stdio.h>
-
-// int main(void)
-// {
-// 	char *s = "123987459";
-// 	printf("%d", atoi(s));
-// }

@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/07 13:52:47 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/23 15:31:35 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/27 14:29:52 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*s;
-	unsigned char	*c;
+	unsigned char	*d;
 
-	c = dest;
+	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
 	if (!src && !dest)
 		return (0);
 	while (n > 0)
 	{
-		*c = *s;
+		*d = *s;
 		n--;
-		c++;
+		d++;
 		s++;
 	}
 	return (dest);

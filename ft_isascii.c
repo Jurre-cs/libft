@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/07 10:17:01 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/07 10:22:02 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/30 18:02:48 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,3 @@ int	ft_isascii(int c)
 	else
 		return (0);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	printf("%d\n", ft_isascii());
-// }

@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/09 14:39:04 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/16 14:48:43 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/30 18:32:17 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,17 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
+	unsigned char	*stmp;
 	size_t			i;
-	unsigned char	*d;
 
-	d = (unsigned char *)s;
 	i = 0;
-	if (n == 0 || !s)
-		return (NULL);
-	while (d[i] != '\0' && d[i] != c && i < n)
+	stmp = (unsigned char *)s;
+	while (i < n)
+	{
+		if (*stmp == (unsigned char)c)
+			return ((void *)stmp);
+		stmp++;
 		i++;
-	if (d[i] == '\0')
-		return (NULL);
-	return (d + i);
+	}
+	return (NULL);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	char s[] = "idkhwttotype";
-// 	printf("%s", ft_memchr(s, 'w', 5));
-// }

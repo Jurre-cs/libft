@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/07 10:07:20 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/16 14:45:36 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/30 18:01:50 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
-// #include <stdio.h>
-// int main(void)
-// {
-// 	if (!ft_isalnum)
-// 	// printf("%d\n", ft_isalnum());
-// 	printf("%d", isalnum(1));
-// }

@@ -6,7 +6,7 @@
 /*   By: jstomps <jstomps@student.codam.nl>           +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/10/07 17:01:24 by jstomps       #+#    #+#                 */
-/*   Updated: 2025/10/23 15:41:57 by jstomps       ########   odam.nl         */
+/*   Updated: 2025/10/27 18:45:55 by jstomps       ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,20 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	j = 0;
-	if (!src || !dst || !size)
-		return (0);
-	size = size - 1;
-	while (src && src[i] != '\0')
+	while (src[i] != '\0')
 		i++;
-	while (src[j] && size > 0)
+	if (i + 1 < size)
+		ft_memcpy(dst, src, i + 1);
+	else if (size != 0)
 	{
-		dst[j] = src[j];
-		j++;
-		size--;
+		ft_memcpy(dst, src, size - 1);
+		dst[size - 1] = 0;
 	}
-	dst[j] = '\0';
 	return (i);
 }
 

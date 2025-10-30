@@ -50,6 +50,7 @@ BONUS = \
 	ft_lstlast.c \
 	ft_lstnew.c \
 	ft_lstsize.c \
+	ft_lstmap.c \
 
 BONUS_OBJECTS = $(BONUS:.c=.o)
 
@@ -62,7 +63,7 @@ $(NAME): $(OBJECTS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJECTS)
+	@rm -f $(OBJECTS) $(BONUS_OBJECTS)
 
 bonus: $(OBJECTS) $(BONUS_OBJECTS)
 	ar rcs $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
